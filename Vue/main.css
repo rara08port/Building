@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+h1{
+  text-align:center;
+}
+input[type="text"]{
+  width:400px;
+  padding:5px;
+  font-size:15px;
+  height:30px;
+  border: 2px solid #0099e4; 
+  
+}
+
+#app {
+  max-width: 840px;
+  margin: 0 auto;
+  border:solid 3px black;
+  padding:10px;
+  position:relative;
+}
+button {
+  border: none;
+  border-radius: 15px;
+  padding: 4px 12px;
+  background: #0099e4;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-group{
+  display:flex;
+  justify-content: space-evenly;
+}
+table{
+  width:100%;
+}
+thead th {
+  border-bottom:2px solid #0099e4;
+  color:#0099e4;
+}
+thead th.id {
+  width: 50px;
+}
+thead th.state {
+  width: 100px;
+}
+thead th.button {
+  width: 120px;
+}
+tbody td.state, tbody td.button{
+  text-align:center;
+}
+tr{
+  margin-top:100px;
+}
+tbody tr td,tbody tr th {
+  border-bottom: 1px solid #ccc;
+}
+tbody tr.done td,tbody tr.done th {
+  background: #f8f8f8;
+  color: #bbb;
+}
+tbody tr:hover td,tbody tr:hover th {
+  background: #f4fbff;
+}
+tr{
+  line-height:50px;
+}
+

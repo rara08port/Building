@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js TodoApp</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id=app>
+    <h1>Vue Todoリスト</h1>
+    <h3>新しい作業を追加</h3>
+    <input type="text" v-model="addText" placeholder="Todo入力">
+    <button v-on:click="addToDo()">追加</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="id">ID</th>
+          <th class="comment">作業内容</th>
+          <th class="state">状態</th>
+          <th class="button">処理</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(todo,index) in todos" v-if="todo.isDone === true">
+          <th>{{ todo.id }}</th>
+          <td>{{ todo.text }}</td>
+          <td class="state">
+            <button v-on:click="changeToDo(index)">作業中</button>
+          </td>
+          <td>
+            <div class="btn-group">
+              <button v-on:click.ctrl="deleteToDo(index)">削除</button>
+              <button v-on:click="editToDo(index)">更新</button>
+            </div> 
+          </td>
+        </tr>
+
+        <tr v-for="(todo,index) in todos" v-if="todo.isDone === false" class="done">
+          <th>{{ todo.id }}</th>
+          <td>{{ todo.text }}</td>
+          <td class="state">
+            <button v-on:click="changeToDo(index)">完了</button>
+          </td>
+          <td>
+            <button v-on:click.ctrl="deleteToDo(index)">削除</button>     
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>※削除ボタンはコントロールキーを押しながらクリックして下さい</p>
+
+    
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
